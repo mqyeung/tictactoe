@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-theme {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin-top: 20px;
+    border-radius: 15px; /* Rounded corners for the entire board */
+    padding: 10px;
+    background-color: #ddd; /* Background color for board edges */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff; /* Each square background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em; /* Increase size for X and O */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #ccc;
+}
+
+.dark-theme .board {
+    background-color: #333; /* Dark theme board edges */
+}
+
+.dark-theme .cell {
+    background-color: #222; /* Dark theme squares */
+}
+
+.theme-switch {
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
