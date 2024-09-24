@@ -55,11 +55,15 @@ function handleClick(e) {
     const currentClass = circleTurn ? O_CLASS : X_CLASS;
     placeMark(cell, currentClass);
     if (checkWin(currentClass)) {
-        setTimeout(() => alert(`${circleTurn ? "O's" : "X's"} Wins!`), 10);
-        startGame();
+        setTimeout(() => {
+            alert(`${circleTurn ? "O's" : "X's"} Wins!`);
+            startGame();
+        }, 10);
     } else if (isDraw()) {
-        setTimeout(() => alert('Draw!'), 10);
-        startGame();
+        setTimeout(() => {
+            alert('Draw!');
+            startGame();
+        }, 10);
     } else {
         swapTurns();
     }
