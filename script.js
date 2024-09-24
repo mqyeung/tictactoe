@@ -17,6 +17,15 @@ const winningCombinations = [
     [2, 4, 6]
 ];
 
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    document.body.classList.toggle(savedTheme);
+    if (savedTheme === 'dark-theme') {
+        themeToggle.checked = true;
+    }
+}
+
 startGame();
 
 restartButton.addEventListener('click', startGame);
@@ -24,6 +33,10 @@ restartButton.addEventListener('click', startGame);
 themeToggle.addEventListener('change', () => {
     document.body.classList.toggle('dark-theme');
     document.body.classList.toggle('light-theme');
+    
+    // Save user's theme preference
+    const currentTheme = document.body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
+    localStorage.setItem('theme', currentTheme);
 });
 
 function startGame() {
